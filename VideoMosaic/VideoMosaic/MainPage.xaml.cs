@@ -1,13 +1,15 @@
 ﻿using Xamarin.Forms;
 using LibVLCSharp.Shared;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace VideoMosaic
 {
     public partial class MainPage : ContentPage
     {
-        //const string VIDEO_URL = "http://streams.videolan.org/streams/mp4/Mr_MrsSmith-h264_aac.mp4";
+        const string VIDEO_URL = "http://streams.videolan.org/streams/mp4/Mr_MrsSmith-h264_aac.mp4";
         //const string VIDEO_URL = "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov";
-        const string VIDEO_URL = "http://194.44.202.21:80/mjpg/video.mjpg";
+        //const string VIDEO_URL = "http://194.44.202.21:80/mjpg/video.mjpg";
         readonly LibVLC _libvlc;
 
 
@@ -77,7 +79,7 @@ namespace VideoMosaic
 
         private void Button_Clicked(object sender, System.EventArgs e)
         {
-            MoveBack();
+            /*MoveBack();
 
             MainGrid.Children.Add(VideoView0, 0, 0);
             MainGrid.Children.Add(VideoView1, 1, 0);
@@ -87,27 +89,43 @@ namespace VideoMosaic
             MainGrid.Children.Add(VideoView5, 1, 2);
 
             MainGrid.Children.Add(VideoView6, 0, 3);
-            MainGrid.Children.Add(VideoView7, 1, 3);
+            MainGrid.Children.Add(VideoView7, 1, 3);*/
 
-            VideoView0.MediaPlayer.Play();
-            VideoView1.MediaPlayer.Play();
+            for (; ; )
+            {
+                Task.Delay(1000);
+                VideoView0.MediaPlayer.Stop();
+                VideoView1.MediaPlayer.Stop();
 
-            VideoView2.MediaPlayer.Play();
-            VideoView3.MediaPlayer.Play();
+                VideoView2.MediaPlayer.Stop();
+                VideoView3.MediaPlayer.Stop();
 
-            VideoView4.MediaPlayer.Play();
+                VideoView4.MediaPlayer.Stop();
 
-            VideoView5.MediaPlayer.Play();
-            VideoView6.MediaPlayer.Play();
-            VideoView7.MediaPlayer.Play();
+                VideoView5.MediaPlayer.Stop();
+                VideoView6.MediaPlayer.Stop();
+                VideoView7.MediaPlayer.Stop();
+
+                VideoView0.MediaPlayer.Play();
+                VideoView1.MediaPlayer.Play();
+
+                VideoView2.MediaPlayer.Play();
+                VideoView3.MediaPlayer.Play();
+
+                VideoView4.MediaPlayer.Play();
+
+                VideoView5.MediaPlayer.Play();
+                VideoView6.MediaPlayer.Play();
+                VideoView7.MediaPlayer.Play();
+            }
         }
 
         private void Button_Clicked_1(object sender, System.EventArgs e)
         {
-            MoveBack();
+            /*MoveBack();
 
             MainGrid.Children.Add(VideoView0, 0, 0);
-            MainGrid.Children.Add(VideoView1, 1, 0);
+            MainGrid.Children.Add(VideoView1, 1, 0);*/
 
 
 
@@ -126,9 +144,9 @@ namespace VideoMosaic
 
         private void Button_Clicked_2(object sender, System.EventArgs e)
         {
-            MoveBack();
+            /*MoveBack();
 
-            MainGrid.Children.Add(VideoView3, 0, 0);
+            MainGrid.Children.Add(VideoView3, 0, 0);*/
 
             VideoView0.MediaPlayer.Stop();
             VideoView1.MediaPlayer.Stop();
@@ -154,6 +172,8 @@ namespace VideoMosaic
 
             MainGrid.Children.Add(VideoView6, 0, 7);
             MainGrid.Children.Add(VideoView7, 1, 7);
+
+            Debug.WriteLine("Count "+MainGrid.Children.Count.ToString());
         }
     }
 }
