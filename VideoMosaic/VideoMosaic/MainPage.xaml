@@ -4,10 +4,20 @@
              xmlns:local="clr-namespace:VideoMosaic"
              xmlns:shared="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
              x:Class="VideoMosaic.MainPage">
+
+    <ScrollView>
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"/>
@@ -17,5 +27,17 @@
         <shared:VideoView x:Name="VideoView1" Grid.Row="0" Grid.Column="1"/>
         <shared:VideoView x:Name="VideoView2" Grid.Row="1" Grid.Column="0"/>
         <shared:VideoView x:Name="VideoView3" Grid.Row="1" Grid.Column="1"/>
+        <shared:VideoView x:Name="VideoView4" Grid.Row="2" Grid.Column="0"/>
+        <shared:VideoView x:Name="VideoView5" Grid.Row="2" Grid.Column="1"/>
+        <shared:VideoView x:Name="VideoView6" Grid.Row="3" Grid.Column="0"/>
+        <shared:VideoView x:Name="VideoView7" Grid.Row="3" Grid.Column="1"/>
+        
+        <StackLayout>
+            <Button Text="ALL" Clicked="Button_Clicked"/>
+            <Button Text="1-2" Clicked="Button_Clicked_1"/>
+            <Button Text="3" Clicked="Button_Clicked_2"/>
+
+        </StackLayout>
     </Grid>
+    </ScrollView>
 </ContentPage>
