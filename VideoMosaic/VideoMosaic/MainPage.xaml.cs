@@ -93,8 +93,10 @@ namespace VideoMosaic
 
             for (; ; )
             {
-                Task.Delay(1000);
+                System.Threading.Thread.Sleep(1000);
+
                 VideoView0.MediaPlayer.Stop();
+
                 VideoView1.MediaPlayer.Stop();
 
                 VideoView2.MediaPlayer.Stop();
@@ -105,6 +107,8 @@ namespace VideoMosaic
                 VideoView5.MediaPlayer.Stop();
                 VideoView6.MediaPlayer.Stop();
                 VideoView7.MediaPlayer.Stop();
+
+                System.Threading.Thread.Sleep(1000);
 
                 VideoView0.MediaPlayer.Play();
                 VideoView1.MediaPlayer.Play();
