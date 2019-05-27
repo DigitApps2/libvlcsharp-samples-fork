@@ -14,10 +14,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <shared:VideoView x:Name="VideoView0" Grid.Row="0" Grid.Column="0"/>
-        <shared:VideoView x:Name="VideoView1" Grid.Row="0" Grid.Column="1"/>
-        <shared:VideoView x:Name="VideoView2" Grid.Row="1" Grid.Column="0"/>
-        <shared:VideoView x:Name="VideoView3" Grid.Row="1" Grid.Column="1"/>
 
-        <Button Text="Start" Clicked="Button_Clicked"/>
+        <Button Text="Start" Clicked="Button_Clicked" Grid.Column="1"/>
     </Grid>
 </ContentPage>
